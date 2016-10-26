@@ -1,4 +1,19 @@
 
+#quizArea{
+font-weight: bold;
+border-style: solid;
+background-color: #FFFF00;
+text-align: center;
+padding-left:10px; 
+padding-right:10px;
+padding-top: 20px;
+padding-bottom: 20px;
+width: 300px;
+height: 75px;
+margin-left: 40%;
+position:relative;
+margin-bottom: 20px;
+}
 body{
 	background-color:lightblue;
 	width:auto;
@@ -9,11 +24,13 @@ h1{
 	color: blue;
 	font-weight: bold;
 	font-family:Helvetica, sans-serif;	
+	font-weight: bold;
 	margin-top: 10px;
 	}
-h2{
+#timer{
   text-align: center;
   color:black;
+
   font-family:Helvetica, sans-serif;
   margin-top: 10x;
   font-size:18px;
@@ -28,10 +45,11 @@ h3{
   font-size:18px;
 
 }
-#button{
- text-align: center;
+#questions{
+text-align: center;
+
 }
-.Button{
+.Buttons{
 	text-align: center;
 	font-weight: bold;
 	font-family:Helvetica, sans-serif;	

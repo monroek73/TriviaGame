@@ -1,118 +1,147 @@
-// GLOBAL VARIABLES
+// Divs
+// #wrapper - wrapper for H1 tag
+// #start
+// #timeremaining
+// #question1
+// #question2
+// #question3
+// #question4
+// #question5
+// #submit
 
-var startCount = 30;
-var box = $('#quizArea');
-
-// (we are going to append the questions to the page!! you must write box.append)
 
 
-// QUESTIONS
+$( document ).ready(function() {
 
-   $("#start").click(function() {
-    game.reset()
-    $('#quizArea').on("click", function(){
-	$('#quizArea').show(1000.*5).hide(1000*60);
-	$('box').append(questions);
+	$( "#start" ).click(function() {
+
+         $(this).hide();
+         game.start();
+         });
+       		
+       // GLOBAL VARIABLES
+
+       var timeremaining = 30;
+       var question = 0;
+       // setInterval('#timer', 3000);
+
+       // CLICK FUNCTIONS
+
+    $("#resetgame").click(function() {
+      game.reset();
+      });
+
+      var game = {
+
+         // timer: 0,
+         // Questions: questions,
+         // currentQuestion: 0,
+         // correct: 0,
+         // incorrect: 0,
+start: function() {
+
+           var number = 30;
+
+           function run(){
+             counter = setInterval (increment, 1000);
+
+           }
+           function increment(){
+           number--;
+           $("#timer").html('<h2>' + number + '</h2>');
+           if (number === 0) {
+           stop();
+           }
+           }
+          function stop () {
+          clearInterval(counter);
+           }
+
+          run();
+          $("#questions").html(question[0].question);
+          $("#options").html(question[0].options);
+
+          var answerChoices = "<div>";
+
+          for (i = 0; i < questions[0].options.length; i++) { 
+          answerChoices+='<h2 id= "choice' + i + '">' + questions[0].options[i] + '</h2></br>';
+          }
+
+          answerChoices+= "</div>";
+          $("#options").html(answerChoices);
+
+          }
+}
 });
-   });
+            
 
-var questions = [
-//Question 1
-  {
-    'answer': 'c',
-    'question': 'What music artist holds the record for the most Grammy nominations?',
-    'options': ['Barbara Streisand', 'David Forster', 'Quincy Jones'],
-    'image': "assets/images/music1"
-
-  },
-
-//Question 2  
-  {
-    'answer': 'b',
-    'question':'Which male artist has won the most Grammy Awards?',
-    'options': ['Stevie Wonder', 'Georg Solti', 'Paul McCartney'],
-    'image': "assets/images/music2"
-
-  },
-
-//Question 3
-  {
-    'answer': 'a',
-    'question': 'Which female artist(s) has won the most Grammy Awards?',
-    'options': ['Alison Krauss', 'Beyonce', 'Aretha Franklin'],
-    'image': "assets/images/music3"
-
-  },  
-
-//Question 4
-{
-  'answer': 'a',
-  'question': 'Which music group has won the most Grammy Awards?',
-  'options': ['U2', 'Foo Fighters', 'The Beatles'],
-  'image': "assets/images/music4"
-
-},
-
-//Question 5
-{
-  'answer': 'c',
-  'question': 'Which music producer has won the most Grammy Awards?',
-  'options': ['David Foster"', 'Kayne West', 'Qunicy Jones'],
-  'image': "assets/images/music5"
-
-}];
-
-
-var game = {
-
-  Questions: questions,
-  currentQuestion: 0,
-  correct: 0,
-  incorrect: 0,
-
-
-  reset: function() {
     
-    // time remaining
-    // questions
-    // answers
+      
+//       	  answerChoices+= "</div>";
+//       	  $("#options").html(answerChoices);
+//            });
+          
+              
+//      function next(){
+//            var number = 30;
+//            function run(){
+//            counter = setInterval (increment, 1000);
+//            }
 
-  },
+//       function increment(){
+//            number--;
+//            $("#timer").html('<h2>' + number + '</h2>');
+//            if (number === 0) {
+//            top();
+//            }
+//            }
+//            function stop () {
+//            clearInterval(counter);
+//            }
+//           run();
+//           $("#questions").html(question[0].question);
+//           $("#options").html(question[0].options);
+
+//           var answerChoices = "<div>";
+
+//           for (i = 0; i < question.currentQuestion[0].options.length; i++) { 
+//           answerChoices+='<h2 id= "choice' + i + '">' + questions[0].options[i] + '</h2></br>';
+//           }
+
+//           answerChoices+= "</div>";
+//           $("#options").html(answerChoices); 
+
+//           }
+          
+      
+//       	  answerChoices+= "</div>";
+//       	  $("#options").html(answerChoices);
+      
+  	 
+        
+          
+          
+// //         showScore: function() {
+// //        // replace by using .html with an image tag with some text that says YOU LOST THE WHOLE GAME
 
 
-  loadQuestion: function() {
-
-  },
-
-  nextQuestion: function() {
+//          },
 
 
-  },
+//        //   youWon: function() {
+//        // // replace by using .html with an image tag with some text that says YOU WON THE WHOLE GAME
 
-  youWon: function() {
+//        //   },
 
-
-  },
-
-  youLost: function() {
-
-
-  },
-
-  Click: function() {
-
-  },
-
-}
+//        //   youLost: function() {
+//        // // replace by using .html with an image tag with some text that says YOU LOST THE WHOLE GAME
 
 
-// FUNCTIONS
+//        //   }, {
 
-for (var i = 0; i < questions.length; i++) { 
 
-console.log(questions[i].question);
 
-}
+// }
 
 
 
